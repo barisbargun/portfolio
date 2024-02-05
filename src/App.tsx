@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <div className="h-screen w-full flex-justify-center relative">
-        <div className="grayscale-[50%] brightness-[50%] absolute bg-hero-pattern bg-cover bg-no-repeat bg-center h-full w-full" />
+        <div className="grayscale-[50%] brightness-[50%] absolute bg-hero-pattern bg-cover bg-no-repeat bg-left h-full w-full" />
         <Navbar />
         <Hero />
       </div>
