@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 font-poppins scroll-smooth;
+  }
+  
+  #root {
+    @apply w-full box-border bg-mainColor flex-center flex-col overflow-hidden pb-20;
+  }
+
+  .pageWidth {
+    @apply max-w-[920px] w-[80%] max-sm:w-[85%];
+  }
+}
+
+@layer utilities {
+  /* TYPOGRAPHY */
+
+  /* Each Page heads */
+  .f64-extrabold {
+    @apply text-[60px] font-extrabold max-md:text-[36px] max-sm:text-[30px];
+  }
+
+  .f20-medium {
+    @apply text-[20px] font-medium max-md:text-[18px] max-sm:text-[16px];
+  }
+
+  .f15-bold {
+    @apply text-[15px] font-bold max-sm:text-[16px];
+  }
+
+  .f15-medium {
+    @apply text-[15px] font-medium max-sm:text-[13px];
+  }
+
+  .f14-bold {
+    @apply text-[14px] font-bold max-sm:text-[13px];
+  }
+
+  .f13-medium {
+    @apply text-[13px] font-medium max-sm:text-[11px];
+  }
+
+  .f12-regular {
+    @apply text-[12px] font-normal max-sm:text-[11px];
+  }
+
+  .f10-light {
+    @apply text-[10px] font-light max-sm:text-[9px];
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .flex-justify-center {
+    @apply flex justify-center;
+  }
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+  .flex-start {
+    @apply flex justify-start items-center;
+  }
+}
+
+@layer components {
+  .head-intro {
+    @apply f13-medium uppercase tracking-[3.8px] opacity-85;
+  }
+
+  .head-desc {
+    @apply f15-medium tracking-[0.75px] opacity-95;
+  }
+
+  .navLinks {
+    @apply uppercase f15-medium tracking-[1.9px] opacity-85;
+  }
+
+  .exp-comp {
+    @apply uppercase f10-light tracking-[0.75px] opacity-85;
+  }
+
+  .exp-date {
+    @apply uppercase f10-light tracking-[3px] opacity-85;
+  }
+
+  .customQuote::after {
+    content: "\"";
+    @apply text-[36px] font-bold rotate-6 absolute top-[-40px] left-0;
+  }
+}
