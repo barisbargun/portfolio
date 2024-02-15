@@ -7,7 +7,7 @@ const Credit = () => {
     <section>
       <motion.div variants={textVariant()} className='mb-2'>
         <p className='head-intro '>{pageTexts.credit.intro}</p>
-        <h1 className='f64-extrabold mb-4'>{pageTexts.credit.head}</h1>
+        <h2 className='f64-extrabold mb-4'>{pageTexts.credit.head}</h2>
       </motion.div>
 
       <div className='flex flex-col gap-3'>

@@ -10,7 +10,7 @@ const Experience = () => {
     <section>
       <motion.div variants={textVariant()} className="mb-10">
         <p className="head-intro">{pageTexts.experience.intro}</p>
-        <h1 className="f64-extrabold">{pageTexts.experience.head}</h1>
+        <h2 className="f64-extrabold">{pageTexts.experience.head}</h2>
       </motion.div>
 
       <VerticalTimeline className = "sm:!w-[95%]">

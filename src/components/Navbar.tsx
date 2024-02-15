@@ -20,6 +20,7 @@ const Navbar = () => {
             width={57}
             height={57}
             alt="logo"
+            loading="eager"
           />
           <p className="f15-bold tracking-[5px] uppercase">Barış Olgun</p>
         </div>
@@ -35,7 +36,7 @@ const Navbar = () => {
         <nav className="md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <img src='/assets/menu.svg' alt="menu" width={16} height={16} />
+              <img src='/assets/menu.svg' alt="menu" loading="eager" width={16} height={16} />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {navLinks.map(v =>

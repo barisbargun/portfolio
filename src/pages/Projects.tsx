@@ -8,7 +8,7 @@ const Projects = () => {
     <section>
       <motion.div variants={textVariant()} className='mb-2'>
         <p className='head-intro'>{pageTexts.projects.intro}</p>
-        <h1 className='f64-extrabold mb-4'>{pageTexts.projects.head}</h1>
+        <h2 className='f64-extrabold mb-4'>{pageTexts.projects.head}</h2>
       </motion.div>
 
       <motion.p className='head-desc max-w-[600px]' variants={fadeIn("", "", 0.3, 1)}>

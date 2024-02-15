@@ -5,13 +5,13 @@ const ExperienceCard = ({ experience }: { experience: IExperience }) => {
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work w-full"
-      contentStyle={{ background: '#10152D', color: '#fff'}}
+      contentStyle={{ background: '#10152D', color: '#fff' }}
       contentArrowStyle={{ borderRight: '7px solid  #10152D' }}
       date={<h5 className='exp-date'>{experience.date}</h5>}
       iconStyle={{ background: "#050816", color: '#fff' }}
       icon={
         <div className='flex-center h-full'>
-          <img src={experience.icon} alt='icon'
+          <img src={experience.icon} alt="icon"  loading='lazy'
             className='object-contain w-[60%] h-[60%]' />
 
         </div>
@@ -22,7 +22,7 @@ const ExperienceCard = ({ experience }: { experience: IExperience }) => {
       <div className='flex flex-col gap-2'>
         {experience.points.map((v, ind) => (
           <div key={ind} className='flex items-start'>
-            <img src='/assets/experiencesIcons/star.svg' className='object-contain w-4 h-4 mt-1'/>
+            <img src='/assets/experiencesIcons/star.svg' alt='star icon' loading='lazy'  className='object-contain w-4 h-4 mt-1' />
             <h5 className='f12-regular mt-0 ml-2'>{v}</h5>
           </div>
         ))}

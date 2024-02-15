@@ -12,7 +12,7 @@ export default {
     
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/assets/herobg.jpg')",
+        "hero-pattern": "url('/assets/herobg.avif')",
       },
       container: {
         center: true,

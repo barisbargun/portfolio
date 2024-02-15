@@ -41,19 +41,19 @@ const pageTexts: IPageTexts = {
 const services: IIcon[] = [
   {
     name: "Web Developer",
-    icon: "/assets/serviceIcons/web.png",
+    icon: "/assets/serviceIcons/web.avif",
   },
   {
     name: "Javascript Developer",
-    icon: "/assets/serviceIcons/creator.png",
+    icon: "/assets/serviceIcons/creator.avif",
   },
   {
     name: "React js Developer",
-    icon: "/assets/serviceIcons/mobile.png",
+    icon: "/assets/serviceIcons/mobile.avif",
   },
   {
     name: "Node js Developer",
-    icon: "/assets/serviceIcons/backend.png",
+    icon: "/assets/serviceIcons/backend.avif",
   },
 ];
 

@@ -13,12 +13,15 @@ const ProjectCards = () => {
           <Tilt className="flex flex-col bg-secondColor rounded-md p-3 gap-3 h-full w-full shadow-card">
               <div className="relative ">
 
-                <img src={v.image} alt="project-image" className="w-full rounded-md object-crop aspect-video" />
+                <img src={v.image} alt={`${v.name} icon`} loading="lazy" className="w-full rounded-md object-crop aspect-video" />
 
                 <a href={v.source_code_link} target="_blank" rel="noopener noreferrer" className="absolute right-1 top-1">
                   <img
-                    src="/assets/github.png"
-                    alt="source-code-link" className="w-6 h-6 object-contain bg-black rounded-full"
+                    src="/assets/github.svg"
+                    alt="source code icon"
+                    loading="lazy"
+                    title="Github repository"
+                    className="w-6 h-6 object-contain bg-black rounded-md p-[3px] box-content"
                   />
                 </a>
 

@@ -18,7 +18,7 @@ const DeveloperBoxes = () => {
                 <div
                   className="w-[178px] h-[193px] rounded-2xl flex-center flex-col gap-4  bg-secondColor"
                 >
-                  <img src={v.icon} alt="icon" width={55} height={55} />
+                  <img loading="lazy" src={v.icon} alt={`${v.name} icon`} width={55} height={55}/>
                   <h2 className="w-[130px] text-center f14-bold">{v.name}</h2>
                 </div>
               </div>

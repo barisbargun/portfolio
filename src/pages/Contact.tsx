@@ -11,7 +11,7 @@ const Contact = () => {
       <div className="bg-secondColor p-6 rounded-lg w-full">
         <motion.div variants={textVariant()} className='mb-2'>
           <p className='head-intro '>{pageTexts.contact.intro}</p>
-          <h1 className='f64-extrabold mb-8'>{pageTexts.contact.head}</h1>
+          <h2 className='f64-extrabold mb-8'>{pageTexts.contact.head}</h2>
         </motion.div>
         <ContactForm />
       </div>

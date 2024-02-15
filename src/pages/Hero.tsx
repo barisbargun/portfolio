@@ -12,7 +12,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col ml-10 mt-8 max-sm:ml-5 gap-2">
             <h1 className="f64-extrabold">Hi, I'm <span className="text-purple ">Baris</span></h1>
-            <p className="f20-medium max-w-[400px]">Crafting captivating and innovative web applications is my forte.</p>
+            <h2 className="f20-medium max-w-[400px]">Crafting captivating and innovative web applications is my forte.</h2>
           </div>
         </div>
 
@@ -23,7 +23,7 @@ const Hero = () => {
 
       </div>
       <div className="absolute bottom-8 z-10 w-full flex-center">
-        <a href="#about">
+        <a href="#about" rel="button" aria-label="About">
           <div className=" w-[25px] h-[40px] border-4 border-white rounded-full flex justify-center pt-[3px]">
             <motion.div
               animate={{
@@ -37,6 +37,7 @@ const Hero = () => {
               className='w-3 h-3 rounded-full bg-white mb-1'
             />
           </div>
+          <span className="sr-only">About</span>
         </a>
 
       </div>
