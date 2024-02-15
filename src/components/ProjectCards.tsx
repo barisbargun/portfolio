@@ -2,15 +2,21 @@ import { motion } from "framer-motion"
 import { fadeIn } from "src/lib/motion"
 import Tilt from "react-parallax-tilt";
 import { projects } from "src/constants";
+import { useInView } from "react-intersection-observer"
 
 const colors = ["text-[#349F2A]", "text-[#1F57C3]", "text-[#9C2B2B]"];
 const ProjectCards = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
   return (
-    <div className="w-full flex flex-wrap gap-4 max-md:justify-center mt-8">
+    <div className="w-full flex flex-wrap gap-4 max-md:justify-center mt-8" ref={ref}>
       {projects.map((v, index) => (
-        <motion.div key={v.name} variants={fadeIn("up", "spring", index * 0.5, 0.75)} 
-        className="w-[95%] md:w-[48%] md:max-w-[320px]">
-          <Tilt className="flex flex-col bg-secondColor rounded-md p-3 gap-3 h-full w-full shadow-card">
+        <motion.div key={v.name} variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+          className="w-[95%] md:w-[48%] md:max-w-[320px] min-h-[410px]" >
+          {inView &&
+
+            <Tilt className="flex flex-col bg-secondColor rounded-md p-3 gap-3 h-full w-full shadow-card">
               <div className="relative ">
 
                 <img src={v.image} alt={`${v.name} icon`} loading="lazy" className="w-full rounded-md object-crop aspect-video" />
@@ -35,7 +41,8 @@ const ProjectCards = () => {
                   <p key={ind} className={`f12-regular leading-4 ${colors[ind % 3]}`}>#{t}</p>
                 ))}
               </div>
-          </Tilt>
+            </Tilt>
+          }
         </motion.div>
       ))}
     </div>

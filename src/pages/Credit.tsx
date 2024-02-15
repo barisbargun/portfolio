@@ -12,8 +12,8 @@ const Credit = () => {
 
       <div className='flex flex-col gap-3'>
         {
-          credits.map(v => (
-            <p className='f10-light opacity-85 break-words'>{v}</p>
+          credits.map((v,ind) => (
+            <p key={ind} className='f10-light opacity-85 break-words'>{v}</p>
           ))
         }
       </div>

@@ -49,6 +49,7 @@ export default {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        pacifico: ['Pacifico', 'sans-serif'],
       },
       keyframes: {
         'accordion-down': {

@@ -1,8 +1,7 @@
-import { useGLTF } from "@react-three/drei";
 import useIsMobile from "../../hooks/useIsMobile";
 
-const Computer = () => {
-  const computer = useGLTF("/desktop_pc/scene.gltf");
+const Computer = ({computer}:{computer:any}) => {
+  
   const isMobile = useIsMobile();
   return (
     <mesh>

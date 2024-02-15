@@ -1,13 +1,19 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "./CanvasLoader";
 import { Earth } from "./models";
+import { useInView } from "react-intersection-observer";
+
 const EarthCanvas = () => {
+  const earth = useGLTF("/planet/scene.gltf");
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
   return (
 
     <Canvas
-      frameloop='demand'
+      frameloop={inView ? 'demand' : "never"}
       shadows
       dpr={[1, 2]}
       camera={{
@@ -18,19 +24,18 @@ const EarthCanvas = () => {
       }}
       gl={{ preserveDrawingBuffer: true }}
       className="w-fit h-fit"
-      
+      ref={ref}
     >
-      <Suspense fallback={<CanvasLoader />}>
-
-        <OrbitControls
-          autoRotate
-          enableZoom={false}
-          rotateSpeed={0.3}
-          
-
-        />
-        <Earth />
-      </Suspense>
+      {inView &&
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            autoRotate
+            enableZoom={false}
+            rotateSpeed={0.3}
+          />
+          <Earth earth={earth} />
+        </Suspense>
+      }
 
       <Preload all />
     </Canvas>

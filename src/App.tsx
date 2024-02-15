@@ -1,9 +1,14 @@
+import { useInView } from "react-intersection-observer"
 import { Navbar, StarsCanvas } from "./components"
 import { Toaster } from "./components/ui/toaster"
 import MotionWrapper from "./lib/MotionWrapper"
 import { About, Contact, Credit, Experience, Hero, Projects } from "./pages"
 
 const App = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    rootMargin:"0px 0px 300px 0px"
+  });
 
   return (
     <>
@@ -24,15 +29,20 @@ const App = () => {
           {MotionWrapper(Contact, "contact")}
         </div>
 
-        <div className="absolute bottom-0 left-0 h-full w-screen pointer-events-none z-50">
-          <StarsCanvas />
+        <div className="absolute bottom-0 left-0 h-full w-screen pointer-events-none z-50" ref={ref}>
+          {inView &&
+
+            <StarsCanvas />
+          }
+
         </div>
       </div>
 
-      <div className="pageWidth">
+      <div className="pageWidth" >
+
         {MotionWrapper(Credit, "")}
       </div>
-      
+
       <Toaster />
     </>
   )

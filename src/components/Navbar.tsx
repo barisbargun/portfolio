@@ -1,6 +1,7 @@
 import useWindowScroll from "@/hooks/useWindowScroll";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "../components/ui/dropdown-menu";
 import { navLinks } from "../constants";
+import { useCallback, useMemo } from "react";
 
 const Navbar = () => {
 
@@ -9,9 +10,12 @@ const Navbar = () => {
   const moveTop = () => {
     window.scrollTo(0, 0)
   }
+  const clientHeight = useMemo(() => {
+    return Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
+  },[])
   return (
-    <header className={`fixed h-fit ${height! >= 500 && "bg-mainColor"} w-screen py-3 flex-center z-20`}>
+    <header className={`fixed h-fit ${height! >= clientHeight && "bg-mainColor"} w-screen py-3 flex-center z-20`}>
       <div className="flex-between max-w-[1024px] w-[90%]">
         {/* LOGO */}
         <div className="flex-center gap-3 cursor-pointer" onClick={moveTop}>
@@ -22,7 +26,7 @@ const Navbar = () => {
             alt="logo"
             loading="eager"
           />
-          <p className="f15-bold tracking-[5px] uppercase">Barış Olgun</p>
+          <p className="f-creator">Barış Olgun</p>
         </div>
 
         {/* NAVIGATION DESKTOP*/}

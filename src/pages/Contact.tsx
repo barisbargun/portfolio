@@ -5,6 +5,8 @@ import { pageTexts } from "src/constants"
 import { fadeIn, textVariant } from "src/lib/motion"
 
 const Contact = () => {
+  
+
   return (
     <section className="flex justify-between items-center max-lg:flex-col-reverse  gap-12 w-full">
 
