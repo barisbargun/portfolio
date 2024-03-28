@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply m-0 box-border list-none scroll-smooth p-0 font-sora antialiased;
+  }
+
+  #root {
+    @apply bg-background flex-center box-border min-h-screen w-full flex-col overflow-hidden overflow-y-auto pb-20;
+  }
+
+  .pageContainer {
+    @apply pattern w-full flex-col flex-center;
+  }
+
+  .pageWidth {
+    @apply relative z-10 flex w-pageWidth max-w-[90%] justify-center sm:max-w-[80%];
+  }
+
+  .pattern {
+    @apply bg-pattern bg-fixed bg-right-top bg-no-repeat;
+  }
+}
+
+/* Fonts */
+@layer utilities {
+  .title {
+    @apply text-5xl font-bold uppercase max-sm:w-4 sm:whitespace-nowrap  2xl:text-7xl;
+  }
+
+  /* Creator's Name */
+
+  .f-creator {
+    @apply font-source uppercase tracking-[0.2rem] opacity-85 transition-opacity hover:opacity-100 md:font-semibold md:tracking-[0.5rem] drop-shadow-whiteGlow;
+  }
+
+  /* Each Page heads */
+  .f64-extrabold {
+    @apply text-[60px] font-extrabold max-md:text-[36px] max-sm:text-[30px];
+  }
+
+  .f20-medium {
+    @apply text-[20px] font-medium max-md:text-[18px] max-sm:text-[16px];
+  }
+
+  .f15-bold {
+    @apply text-[15px] font-bold max-sm:text-[16px];
+  }
+
+  .f15-medium {
+    @apply text-[15px] font-medium max-sm:text-[13px];
+  }
+
+  .f14-bold {
+    @apply text-[14px] font-bold max-sm:text-[13px];
+  }
+
+  .f13-medium {
+    @apply text-[13px] font-medium max-sm:text-[11px];
+  }
+
+  .f12-regular {
+    @apply text-[12px] font-normal max-sm:text-[11px];
+  }
+
+  .f10-light {
+    @apply text-[10px] font-light max-sm:text-[9px];
+  }
+}
+
+/* Custom Fonts */
+@layer utilities {
+  .head-intro {
+    @apply f13-medium uppercase tracking-[3.8px] opacity-85;
+  }
+
+  .head-desc {
+    @apply f15-medium tracking-[0.75px] opacity-95;
+  }
+
+  .navLinks {
+    @apply f15-medium uppercase tracking-[1.9px] opacity-80 sm:opacity-60 sm:duration-200 sm:hover:opacity-100;
+  }
+
+  .exp-comp {
+    @apply f10-light uppercase tracking-[0.75px] opacity-85;
+  }
+
+  .exp-date {
+    @apply f10-light uppercase tracking-[3px] opacity-85;
+  }
+
+  .customQuote::after {
+    content: '"';
+    @apply absolute left-0 top-[-40px] rotate-6 text-[36px] font-bold;
+  }
+}
+
+/* Flex, Buttons */
+@layer utilities {
+  .custom-button {
+    @apply flex-center h-[50px] w-[140px] rounded-lg text-sm font-semibold uppercase transition-colors md:h-[55px] md:w-[140px] md:text-base 2xl:w-[170px] 2xl:text-lg;
+  }
+
+  .button-white {
+    @apply custom-button drop-shadow-whiteGlow border-2 border-white hover:bg-white hover:text-black;
+  }
+
+  .button-indigo {
+    @apply custom-button drop-shadow-indigoGlow bg-indigo-600 hover:bg-indigo-700;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-justify-center {
+    @apply flex justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-start {
+    @apply flex items-center justify-start;
+  }
+}
