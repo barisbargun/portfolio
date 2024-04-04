@@ -18,8 +18,15 @@ import { toastActions } from "@/lib/toastActions";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
 import { sendMessage } from "@/lib/actions";
+import { useInView } from "react-intersection-observer";
 
 const ContactForm = () => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+    rootMargin: "0px 0px 300px 0px",
+    triggerOnce: true
+  });
+
   const { toast } = useToast();
   const recaptchaRef = useRef<any>();
   const [sending, setSending] = useState(false);
@@ -65,6 +72,7 @@ const ContactForm = () => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className="mt-4 flex w-full flex-col gap-5"
+        ref={ref}
       >
         <FormField
           control={form.control}
@@ -124,11 +132,14 @@ const ContactForm = () => {
           )}
         />
 
-        <ReCAPTCHA
-          sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
-          ref={recaptchaRef}
-          className="max-sm:flex-center w-full"
-        />
+        {inView && (
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+            ref={recaptchaRef}
+            className="max-sm:flex-center w-full"
+          />
+        )}
+
         <input
           aria-label="submit-form"
           disabled={sending}
